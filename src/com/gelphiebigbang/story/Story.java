@@ -28,7 +28,6 @@ public class Story {
     Triggers triggers;
     Ship ship;
 
-    // TODO add triggers and gelphie ship on writer path
     public Story(String inputString){
         int index = inputString.indexOf("END");
         String storyElements = inputString.substring(0, index);
@@ -38,14 +37,16 @@ public class Story {
         int lastIndex = index + 4;
         index = inputString.indexOf(",", lastIndex);
         String ratingString = inputString.substring(lastIndex, index);
+        lastIndex = index + 1;
+        index = inputString.indexOf(",", lastIndex);
         while (ratingString.contains("\"")){
             // use last rating if multiple are selected
-            lastIndex = index + 1;
-            index = inputString.indexOf(",", lastIndex);
             ratingString = inputString.substring(lastIndex, index);
             if (ratingString.endsWith("\"")){
                 ratingString = ratingString.substring(0, ratingString.length()-1);
             }
+            lastIndex = index + 1;
+            index = inputString.indexOf(",", lastIndex);
         }
         switch (ratingString) {
             case "General (G)":
@@ -61,6 +62,40 @@ public class Story {
                 this.rating = Rating.EXPLICIT;
                 break;
             default:
+                break;
+        }
+        
+        index = inputString.indexOf(",", lastIndex);
+        int triggerCheck = Integer.parseInt(inputString.substring(lastIndex, index));
+        lastIndex = index + 1;
+        index = inputString.indexOf("END", lastIndex);
+        switch (triggerCheck) {
+            case 0:
+                this.triggers = new Triggers(true);
+                break;
+            case 2:
+                this.triggers = new Triggers(false);
+                break;
+            case 1:
+            default:
+                this.triggers = new Triggers(inputString.substring(lastIndex, index));
+                break;
+        }
+        lastIndex = index + 4;
+        index = inputString.indexOf(",", lastIndex);
+        int gelphieShip = Integer.parseInt(inputString.substring(lastIndex, index));
+        switch (gelphieShip) {
+            case 0:
+                this.ship = Ship.ONLY_GELPHIE;
+                break;
+            case 1:
+                this.ship = Ship.GELPHIE_ENDGAME;
+                break;
+            case 2:
+                this.ship = Ship.GELPHIE_DRAWING;
+                break;
+            case 3:
+                this.ship = Ship.ANY_PAIRING;
                 break;
         }
     }
