@@ -111,7 +111,7 @@ public class Romance {
                 score += penalty;
             }
         } else if (this.romance == Preference.NO && compareTo.getRomance() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getRomance() == Preference.YES){
             score += halfPenalty;
         }
@@ -123,7 +123,7 @@ public class Romance {
                 score += penalty;
             }
         } else if (this.dark_romance == Preference.NO && compareTo.getDark_romance() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getDark_romance() == Preference.YES){
             score += halfPenalty;
         }
@@ -135,7 +135,7 @@ public class Romance {
                 score += penalty;
             }
         } else if (this.soulmates == Preference.NO && compareTo.getSoulmates() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getSoulmates() == Preference.YES){
             score += halfPenalty;
         }
@@ -147,7 +147,7 @@ public class Romance {
                 score += penalty;
             }
         } else if (this.slow_burn == Preference.NO && compareTo.getSlow_burn() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getSlow_burn() == Preference.YES){
             score += halfPenalty;
         }
@@ -159,7 +159,7 @@ public class Romance {
                 score += penalty;
             }
         } else if (this.est_relationship == Preference.NO && compareTo.getEst_relationship() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getEst_relationship() == Preference.YES){
             score += halfPenalty;
         }
@@ -171,7 +171,7 @@ public class Romance {
                 score += penalty;
             }
         } else if (this.smut == Preference.NO && compareTo.getSmut() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getSmut() == Preference.YES){
             score += halfPenalty;
         }

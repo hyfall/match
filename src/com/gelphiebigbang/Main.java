@@ -1,6 +1,7 @@
 package com.gelphiebigbang;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -43,6 +44,8 @@ public class Main {
         // find highest and lowest scores to make threshold barriers
         // use threshold and anything negative is poor
         // then cycle through every writer to see what where
+        List<String> artistLines = new ArrayList<>();
+        List<String> writerLines = new ArrayList<>();
 
         for(int i=0; i<artists.size(); i++){
             Artist checkingArtist = artists.get(i);
@@ -57,7 +60,21 @@ public class Main {
                 // System.out.println(threshold);
 
                 // on last index of artists + writers print to csv writers
+                if (i == artists.size() - 1) {
+                    writerLines.add(checkingWriter.writerCSVNumbers());
+                }
             }
+            artistLines.add(checkingArtist.artistCSVNumbers());
+        }
+
+        File csvOutputFileArtist = new File("artistmatchnumbers.csv");
+        try (PrintWriter pw = new PrintWriter(csvOutputFileArtist)) {
+            artistLines.stream().forEach(pw::println);
+        }
+
+        File csvOutputFileWriter = new File("writermatchnumbers.csv");
+        try (PrintWriter pw = new PrintWriter(csvOutputFileWriter)) {
+            writerLines.stream().forEach(pw::println);
         }
 
     }

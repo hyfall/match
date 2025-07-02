@@ -45,23 +45,14 @@ public class Match {
         // compare tone
         // System.out.println("here5");
         double toneScore = artist.getStory().getTone().compareTone(writer.getStory().getTone(), artist.getToneRank());
-        if (toneScore == 999.999) {
-            return;
-        }
         score += toneScore;
 
         // compare romance
         double romanceScore = artist.getStory().getRomance().compareRomance(writer.getStory().getRomance(), artist.getRomanceRank());
-        if (romanceScore == 999.999) {
-            return;
-        }
         score += romanceScore;
 
         // compare setting
         double settingScore = artist.getStory().getSetting().compareSetting(writer.getStory().getSetting(), artist.getSettingRank());
-        if (settingScore == 999.999) {
-            return;
-        }
         score += settingScore;
 
         //System.out.println(score + " : " + max);

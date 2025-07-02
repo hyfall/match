@@ -76,5 +76,9 @@ public class Writer {
         this.poor.add(artist);
     }
 
+    public String writerCSVNumbers(){
+        String line = email + "," + ID + "," + perfect.size() + "," + great.size() + "," + good.size() + "," + fair.size() + "," + poor.size() + ",";
+        return line;
+    }
     
 }

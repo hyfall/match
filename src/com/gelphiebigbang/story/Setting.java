@@ -111,7 +111,7 @@ public class Setting {
                 score += penalty;
             }
         } else if (this.canon_divergent == Preference.NO && compareTo.getCanon_divergent() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getCanon_divergent() == Preference.YES){
             score += halfPenalty;
         }
@@ -123,7 +123,7 @@ public class Setting {
                 score += penalty;
             }
         } else if (this.alt_universe == Preference.NO && compareTo.getAlt_universe() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getAlt_universe() == Preference.YES){
             score += halfPenalty;
         }
@@ -135,7 +135,7 @@ public class Setting {
                 score += penalty;
             }
         } else if (this.shiz_era == Preference.NO && compareTo.getShiz_era() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getShiz_era() == Preference.YES){
             score += halfPenalty;
         }
@@ -147,7 +147,7 @@ public class Setting {
                 score += penalty;
             }
         } else if (this.act_2_spoilers == Preference.NO && compareTo.getAct_2_spoilers() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getAct_2_spoilers() == Preference.YES){
             score += halfPenalty;
         }
@@ -159,7 +159,7 @@ public class Setting {
                 score += penalty;
             }
         } else if (this.book_canon == Preference.NO && compareTo.getBook_canon() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getBook_canon() == Preference.YES){
             score += halfPenalty;
         }
@@ -171,7 +171,7 @@ public class Setting {
                 score += penalty;
             }
         } else if (this.musical_canon == Preference.NO && compareTo.getMusical_canon() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getMusical_canon() == Preference.YES){
             score += halfPenalty;
         }

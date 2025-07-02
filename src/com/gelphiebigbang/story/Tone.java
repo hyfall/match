@@ -111,7 +111,7 @@ public class Tone {
                 score += penalty;
             }
         } else if (this.fluff == Preference.NO && compareTo.getFluff() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getFluff() == Preference.YES){
             score += halfPenalty;
         }
@@ -123,7 +123,7 @@ public class Tone {
                 score += penalty;
             }
         } else if (this.angst == Preference.NO && compareTo.getAngst() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getAngst() == Preference.YES){
             score += halfPenalty;
         }
@@ -135,7 +135,7 @@ public class Tone {
                 score += penalty;
             }
         } else if (this.humor == Preference.NO && compareTo.getHumor() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getHumor() == Preference.YES){
             score += halfPenalty;
         }
@@ -147,7 +147,7 @@ public class Tone {
                 score += penalty;
             }
         } else if (this.hurt_comfort == Preference.NO && compareTo.getHurt_comfort() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getHurt_comfort() == Preference.YES){
             score += halfPenalty;
         }
@@ -159,7 +159,7 @@ public class Tone {
                 score += penalty;
             }
         } else if (this.light == Preference.NO && compareTo.getLight() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getLight() == Preference.YES){
             score += halfPenalty;
         }
@@ -171,7 +171,7 @@ public class Tone {
                 score += penalty;
             }
         } else if (this.dark == Preference.NO && compareTo.getDark() == Preference.YES){
-            return -999.999;
+            return -rank*2;
         } else if (compareTo.getDark() == Preference.YES){
             score += halfPenalty;
         }

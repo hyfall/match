@@ -228,5 +228,8 @@ public class Artist {
         this.poor.add(writer);
     }
 
-    
+    public String artistCSVNumbers(){
+        String line = email + "," + ID + "," + perfect.size() + "," + great.size() + "," + good.size() + "," + fair.size() + "," + poor.size() + ",";
+        return line;
+    }
 }
