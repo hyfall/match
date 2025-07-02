@@ -1,12 +1,5 @@
 package com.gelphiebigbang.story;
 
-public enum Rating {
-    GEN,
-    TEEN,
-    MATURE,
-    EXPLICIT;
-}
-
 enum Ship {
     ONLY_GELPHIE,
     GELPHIE_ENDGAME,
@@ -21,7 +14,7 @@ enum Preference {
 }
 
 public class Story {
-    Rating rating;
+    int rating;
     Tone tone;
     Romance romance;
     Setting setting;
@@ -50,18 +43,17 @@ public class Story {
         }
         switch (ratingString) {
             case "General (G)":
-                this.rating = Rating.GEN;
+                this.rating = 0;
                 break;
             case "Teen (T)":
-                this.rating = Rating.TEEN;
+                this.rating = 1;
                 break;
             case "Mature (M) - (18+ only)":
-                this.rating = Rating.MATURE;
+                this.rating = 2;
                 break;
             case "Explicit (E) - (18+ only)":
-                this.rating = Rating.EXPLICIT;
-                break;
             default:
+                this.rating = 3;
                 break;
         }
         
@@ -121,7 +113,7 @@ public class Story {
         this.triggers = _triggers;
     }
 
-    public Rating getRating() {
+    public int getRating() {
         return rating;
     }
 

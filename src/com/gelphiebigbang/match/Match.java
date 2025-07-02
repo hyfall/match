@@ -11,19 +11,19 @@ public class Match {
         // return int based on cat
         // 0 perfect 1 great 2 good 3 fine 4 poor 5 no match
         // System.out.println("here");
-        Rating writerStoryRating = writer.getStory().getRating();
+        int writerStoryRating = writer.getStory().getRating();
         if (!artist.getOver18()){
-            if (writerStoryRating == Rating.MATURE || writerStoryRating == Rating.EXPLICIT) {
+            if (writerStoryRating == 2 || writerStoryRating == 3) {
                 return;
             }
         }
         // System.out.println("here1");
         // check if rating works with artist
-        if (writerStoryRating == Rating.TEEN && !artist.getRatingTeen()) {
+        if (writerStoryRating == 1 && !artist.getRatingTeen()) {
             return;
-        } else if (writerStoryRating == Rating.MATURE && !artist.getRatingMature()) {
+        } else if (writerStoryRating == 2 && !artist.getRatingMature()) {
             return;
-        } else if (writerStoryRating == Rating.EXPLICIT && !artist.getRatingExplicit()) {
+        } else if (writerStoryRating == 3 && !artist.getRatingExplicit()) {
             return;
         }
         // System.out.println("here2");
@@ -55,7 +55,7 @@ public class Match {
         double settingScore = artist.getStory().getSetting().compareSetting(writer.getStory().getSetting(), artist.getSettingRank());
         score += settingScore;
 
-        //System.out.println(score + " : " + max);
+        // System.out.println(score + " : " + max);
         if (score == max){
             // add to perfect
             artist.addPerfect(writer);

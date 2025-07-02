@@ -2,7 +2,6 @@ package com.gelphiebigbang.artist;
 
 import java.util.ArrayList;
 
-import com.gelphiebigbang.story.Rating;
 import com.gelphiebigbang.story.Romance;
 import com.gelphiebigbang.story.Setting;
 import com.gelphiebigbang.story.Story;
@@ -59,7 +58,11 @@ public class Artist {
         }
         lastIndex = index + 1;
         index = inputString.indexOf("END", lastIndex);
-        this.artStyle = new ArtStyle(inputString.substring(lastIndex, index));
+        if (inputString.substring(lastIndex, index).contains("Depends on fic idea I'm matched with")) {
+            this.artStyle = new ArtStyle(true);
+        } else {
+            this.artStyle = new ArtStyle(inputString.substring(lastIndex, index));
+        }
         lastIndex = index + 4;
         index = inputString.indexOf(",", lastIndex);
         int triggerCheck = Integer.parseInt(inputString.substring(lastIndex, index));
@@ -150,6 +153,10 @@ public class Artist {
         return over18;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public ArtStyle getArtStyle() {
         return artStyle;
     }
@@ -188,24 +195,6 @@ public class Artist {
         max += this.story.getRomance().maxScore(romanceRank);
         max += this.story.getSetting().maxScore(settingRank);
         return max;
-    }
-
-    public Boolean checkRating(Rating rating){
-        switch (rating) {
-            case TEEN:
-                if(this.RatingTeen){
-                    return true;
-                } else return false;  
-            case MATURE:
-                if(this.RatingMature){
-                    return true;
-                } else return false;
-            case EXPLICIT:
-                if(this.RatingTeen){
-                    return true;
-                } else return false;  
-        }
-        return false;
     }
 
     public void addPerfect(Writer writer){

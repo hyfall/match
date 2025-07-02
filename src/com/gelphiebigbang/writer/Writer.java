@@ -48,6 +48,10 @@ public class Writer {
         }
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public Story getStory() {
         return story;
     }

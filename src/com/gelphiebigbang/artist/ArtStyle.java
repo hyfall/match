@@ -25,10 +25,10 @@ public class ArtStyle {
         if (inputString.contains("Digital Illustration")) {
             this.digital = true;
         }
-        if (inputString.contains("Traditional art: Copy of hand drawn art")) {
+        if (inputString.contains("Traditional art: Copy of hand drawn art") || inputString.contains("Traditional art")) {
             this.trad_hand_drawn = true;
         }
-        if (inputString.contains("Traditional art: Copy of painting")) {
+        if (inputString.contains("Traditional art: Copy of painting") || inputString.contains("Traditional art")) {
             this.trad_painting = true;
         }
         if (inputString.contains("Comics / panels")) {
