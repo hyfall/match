@@ -1,14 +1,14 @@
 package com.gelphiebigbang.artist;
 
 public class ArtStyle {
-    private Boolean digital;
-    private Boolean trad_hand_drawn;
-    private Boolean trad_painting;
-    private Boolean comic;
-    private Boolean poster;
-    private Boolean photo;
-    private Boolean moodboard;
-    private Boolean animation;
+    private Boolean digital = false;
+    private Boolean trad_hand_drawn = false;
+    private Boolean trad_painting = false;
+    private Boolean comic = false;
+    private Boolean poster = false;
+    private Boolean photo = false;
+    private Boolean moodboard = false;
+    private Boolean animation = false;
 
     public ArtStyle(Boolean allValues){
         this.digital = allValues;
@@ -46,5 +46,33 @@ public class ArtStyle {
         if (inputString.contains("Animation or gifs")) {
             this.animation = true;
         }
+    }
+
+    public double compareArtStyle(ArtStyle compareTo){
+        if (this.digital && compareTo.digital) {
+            return 5;
+        }
+        if (this.trad_hand_drawn && compareTo.trad_hand_drawn) {
+            return 5;
+        }
+        if (this.trad_painting && compareTo.trad_painting) {
+            return 5;
+        }
+        if (this.comic && compareTo.comic) {
+            return 5;
+        }
+        if (this.poster && compareTo.poster) {
+            return 5;
+        }
+        if (this.photo && compareTo.photo) {
+            return 5;
+        }
+        if (this.moodboard && compareTo.moodboard) {
+            return 5;
+        }
+        if (this.animation && compareTo.animation) {
+            return 5;
+        }
+        return -1;
     }
 }

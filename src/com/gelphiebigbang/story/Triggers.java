@@ -2,14 +2,14 @@ package com.gelphiebigbang.story;
 
 public class Triggers {
     // true -> not include | in story
-    private Boolean mental_health;
-    private Boolean physical_violence;
-    private Boolean non_consent;
-    private Boolean death;
-    private Boolean unhappy_ending;
-    private Boolean emotional_abuse;
-    private Boolean substance_abuse;
-    private Boolean failure_of_society;
+    private Boolean mental_health = false;
+    private Boolean physical_violence = false;
+    private Boolean non_consent = false;
+    private Boolean death = false;
+    private Boolean unhappy_ending = false;
+    private Boolean emotional_abuse = false;
+    private Boolean substance_abuse = false;
+    private Boolean failure_of_society = false;
 
     public Triggers(Boolean allValues){
         this.mental_health = allValues;
@@ -47,5 +47,33 @@ public class Triggers {
         if (inputString.contains("TW Societal triggers: racism, homophobia, slavery.")) {
             this.failure_of_society = true;
         }
+    }
+
+    public Boolean compareTriggers(Triggers compareTo) {
+        if (this.mental_health && compareTo.mental_health) {
+            return false;
+        }
+        if (this.physical_violence && compareTo.physical_violence) {
+            return false;
+        }
+        if (this.non_consent && compareTo.non_consent) {
+            return false;
+        }
+        if (this.death && compareTo.death) {
+            return false;
+        }
+        if (this.unhappy_ending && compareTo.unhappy_ending) {
+            return false;
+        }
+        if (this.emotional_abuse && compareTo.emotional_abuse) {
+            return false;
+        }
+        if (this.substance_abuse && compareTo.substance_abuse) {
+            return false;
+        }
+        if (this.failure_of_society && compareTo.failure_of_society) {
+            return false;
+        }
+        return true;
     }
 }

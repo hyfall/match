@@ -1,6 +1,6 @@
 package com.gelphiebigbang.story;
 
-enum Rating {
+public enum Rating {
     GEN,
     TEEN,
     MATURE,
@@ -121,4 +121,48 @@ public class Story {
         this.triggers = _triggers;
     }
 
+    public Rating getRating() {
+        return rating;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public Tone getTone() {
+        return tone;
+    }
+
+    public Romance getRomance() {
+        return romance;
+    }
+
+    public Setting getSetting() {
+        return setting;
+    }
+
+    public Triggers getTriggers() {
+        return triggers;
+    }
+
+    public Boolean compareShips(Ship toCompare){
+        if (this.ship == Ship.ANY_PAIRING){
+            return true;
+        } else if (this.ship == Ship.ONLY_GELPHIE) {
+            if (toCompare == Ship.ONLY_GELPHIE) {
+                return true;
+            }
+        } else if (this.ship == Ship.GELPHIE_ENDGAME) {
+            if (toCompare == Ship.ONLY_GELPHIE) {
+                return true;
+            } else if (toCompare == Ship.GELPHIE_ENDGAME) {
+                return true;
+            }
+        } else if (toCompare == Ship.ANY_PAIRING) {
+            return false;
+        } else {
+            return true;
+        }
+        return false;
+    }
 }
