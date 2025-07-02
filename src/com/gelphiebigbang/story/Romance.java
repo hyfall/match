@@ -8,6 +8,8 @@ public class Romance {
     private Preference est_relationship = Preference.MAYBE;
     private Preference smut = Preference.MAYBE;
 
+    public Romance(){}
+
     public Romance (String inputString){
         if (inputString.contains(",Romance") || inputString.contains("Romance,") || inputString.equalsIgnoreCase("Romance")) {
             this.romance = Preference.YES;
@@ -26,6 +28,27 @@ public class Romance {
         }
         if (inputString.contains("Smut")) {
             this.smut = Preference.YES;
+        }
+    }
+
+    public void setNo(String inputString){
+        if (inputString.contains(",Romance") || inputString.contains("Romance,") || inputString.equalsIgnoreCase("Romance")) {
+            this.romance = Preference.NO;
+        }
+        if (inputString.contains("Dark Romance")) {
+            this.dark_romance = Preference.NO;
+        }
+        if (inputString.contains("Soulmates")) {
+            this.soulmates = Preference.NO;
+        }
+        if (inputString.contains("Slow burn")) {
+            this.slow_burn = Preference.NO;
+        }
+        if (inputString.contains("Established relationship")) {
+            this.est_relationship = Preference.NO;
+        }
+        if (inputString.contains("Smut")) {
+            this.smut = Preference.NO;
         }
     }
 }

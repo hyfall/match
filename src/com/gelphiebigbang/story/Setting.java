@@ -8,6 +8,8 @@ public class Setting {
     private Preference book_canon = Preference.MAYBE;
     private Preference musical_canon = Preference.MAYBE;
 
+    public Setting (){}
+
     public Setting(String inputString) {
         if (inputString.contains("Canon-Divergent")) {
             this.canon_divergent = Preference.YES;
@@ -26,6 +28,27 @@ public class Setting {
         }
         if (inputString.contains("Musical Canon")) {
             this.musical_canon = Preference.YES;
+        }
+    }
+
+    public void setNo(String inputString){
+        if (inputString.contains("Canon-Divergent")) {
+            this.canon_divergent = Preference.NO;
+        }
+        if (inputString.contains("AU")) {
+            this.alt_universe = Preference.NO;
+        }
+        if (inputString.contains("Shiz-Era")) {
+            this.shiz_era = Preference.NO;
+        }
+        if (inputString.contains("Act 2 Spoilers")) {
+            this.act_2_spoilers = Preference.NO;
+        }
+        if (inputString.contains("Book Canon")) {
+            this.book_canon = Preference.NO;
+        }
+        if (inputString.contains("Musical Canon")) {
+            this.musical_canon = Preference.NO;
         }
     }
 }
